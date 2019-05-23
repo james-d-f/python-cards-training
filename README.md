@@ -39,12 +39,12 @@ This project demonstrates basic Python features, including:
 ---
 ## File Structure
 These are the core files in the project
-* `mypy.ini`
-* `Pipfile`
-* `Pipfile.lock`
-* `src/card.py`
-* `src/create_card_image.py`
-* `tests/test_card.py`
+* [`mypy.ini`](mypy.ini)
+* [`Pipfile`](Pipfile)
+* [`Pipfile.lock`](Pipfile.lock)
+* [`src/card.py`](src/card.py)
+* [`src/create_card_image.py`](src/create_card_image.py)
+* [`tests/test_card.py`](tests/test_card.py)
 
 The Python core files are also full solutions to the assignment. **You are very strongly discouraged to view these files if you are attempting the assignment.**
 
