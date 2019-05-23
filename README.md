@@ -1,13 +1,13 @@
 # Python Cards Training
 ## Contents:
-[Project Summary](#Project-Summary)
-[File Structure](#File-Structure)
-[Setup](#Setup)
-[Session One](#Session-One)
-[Assignment](#Reviewing-the-Assignment)
-[Reviewing the Assignment](#Reviewing-the-Assignment)
-[Session Two](#Session-Two)
-[Additional Reading](#Additional-Reading)
+* [Project Summary](#Project-Summary)
+* [File Structure](#File-Structure)
+* [Setup](#Setup)
+* [Session One](#Session-One)
+* [Assignment](#Reviewing-the-Assignment)
+* [Reviewing the Assignment](#Reviewing-the-Assignment)
+* [Session Two](#Session-Two)
+* [Additional Reading](#Additional-Reading)
 
 ---
 ## Project Summary
