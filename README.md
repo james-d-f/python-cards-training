@@ -272,17 +272,31 @@ Assignment followup:
 
 ## Additional Reading
 [PEP8 Style Guide](https://www.python.org/dev/peps/pep-0008/)
+
 [Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)
+
 [Black Autoformatter](https://github.com/python/black)
+
 [Data Structures (Lists, Tuples, Sets, Dicts)](https://docs.python.org/3/tutorial/datastructures.html#)
+
 [Exceptions](https://docs.python.org/3/tutorial/errors.html)
+
 [List comprehension](https://hackernoon.com/list-comprehension-in-python-8895a785550b)
+
 [Decorators](https://realpython.com/primer-on-python-decorators/)
+
 [Dataclasses](https://docs.python.org/3/library/dataclasses.html)
+
 [Testing with Pytest](https://docs.pytest.org/en/latest/getting-started.html)
+
 [Using Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial)
+
 [Generators](https://realpython.com/introduction-to-python-generators/)
+
 [Typing in Python](https://realpython.com/python-type-checking/)
+
 [Typing cheat sheet](https://mypy.readthedocs.io/en/latest/cheat_sheet_py3.html)
+
 [Immutability in Python](https://towardsdatascience.com/https-towardsdatascience-com-python-basics-mutable-vs-immutable-objects-829a0cb1530a)
+
 [Properties (getters and setters)](https://www.python-course.eu/python3_properties.php)
