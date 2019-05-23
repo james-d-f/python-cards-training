@@ -1,4 +1,16 @@
 # Python Cards Training
+## Contents:
+[Project Summary](#Project-Summary)
+[File Structure](#File-Structure)
+[Setup](#Setup)
+[Session One](#Session-One)
+[Assignment](#Reviewing-the-Assignment)
+[Reviewing the Assignment](#Reviewing-the-Assignment)
+[Session Two](#Session-Two)
+[Additional Reading](#Additional-Reading)
+
+---
+## Project Summary
 This project models a playing card in Python.
 
 This project demonstrates basic Python features, including:
@@ -25,7 +37,7 @@ This project demonstrates basic Python features, including:
 [Python Slides](https://docs.google.com/presentation/d/1lPxt7WF5IMX6muThL46N9cJc_ZleAgIGy9pu0mBVsuA/edit#slide=id.g57842172a5_0_75)
 
 ---
-## File structure
+## File Structure
 These are the core files in the project
 * `mypy.ini`
 * `Pipfile`
