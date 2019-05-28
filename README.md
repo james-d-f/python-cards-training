@@ -4,7 +4,7 @@
 * [File Structure](#File-Structure)
 * [Setup](#Setup)
 * [Session One](#Session-One)
-* [Assignment](#Reviewing-the-Assignment)
+* [Assignment](#assignment)
 * [Reviewing the Assignment](#Reviewing-the-Assignment)
 * [Session Two](#Session-Two)
 * [Additional Reading](#Additional-Reading)
