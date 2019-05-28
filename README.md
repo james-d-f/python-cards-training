@@ -34,6 +34,7 @@ This project demonstrates basic Python features, including:
 16. Immutability *
 
 (* Includes explanation slides)
+
 [Python Slides](https://docs.google.com/presentation/d/1lPxt7WF5IMX6muThL46N9cJc_ZleAgIGy9pu0mBVsuA/edit#slide=id.g57842172a5_0_75)
 
 ---
@@ -63,19 +64,19 @@ Install VS Code Python extension.
 Add these to your VS Code `settings.json`.
 
 ``` json
-    "python.formatting.provider": "black",
-    "python.formatting.blackPath": "/usr/local/bin/black",
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Path": "/usr/local/bin/flake8",
-    "python.linting.flake8Args": [
-        "--max-line-length=88"
-    ],
-    "python.linting.mypyEnabled": true,
-    "python.linting.mypyPath": "/usr/local/bin/mypy",
-    "python.linting.pylintEnabled": false,
-    "python.testing.pyTestEnabled": true,
-    "python.testing.noseEnabled": false,
-    "python.testing.unittestEnabled": false,
+"python.formatting.provider": "black",
+"python.formatting.blackPath": "/usr/local/bin/black",
+"python.linting.flake8Enabled": true,
+"python.linting.flake8Path": "/usr/local/bin/flake8",
+"python.linting.flake8Args": [
+    "--max-line-length=88"
+],
+"python.linting.mypyEnabled": true,
+"python.linting.mypyPath": "/usr/local/bin/mypy",
+"python.linting.pylintEnabled": false,
+"python.testing.pyTestEnabled": true,
+"python.testing.noseEnabled": false,
+"python.testing.unittestEnabled": false,
 ```
 
 Create a new folder for the project.
@@ -174,7 +175,7 @@ It will then update the value of `self.suit` to the symbol.
 #### Add the `all()` function
 The `all()` function should return all possible valid cards for the class. This should be every combination of rank and suit. `all()` should be a classmethod, and callable as `Card.all()`.
 
-##### Simple:
+##### Simple (Recommended):
 Return a `list` of all cards.
 
 ##### Advanced:
@@ -250,7 +251,9 @@ Some traditional things you may want to try adding:
     * Have the symbols arranged half one way up, and half flipped.
 
 Useful links:
+
 [Pillow Image Reference](https://pillow.readthedocs.io/en/3.1.x/reference/Image.html)
+
 [Pillow Image Draw Reference](https://pillow.readthedocs.io/en/3.1.x/reference/ImageDraw.html)
 
 ---
