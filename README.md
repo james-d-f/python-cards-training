@@ -162,7 +162,7 @@ This session should cover:
 
 ---
 ## Assignment
-[Starting from a base of (card_6_exceptions)[src/card_6_exceptions.py.py]]
+[Starting from a base of [card_6_exceptions](src/card_6_exceptions.py)]
 
 Between session one and two there are the following assignment tasks. These are fully implemented in the core files (e.g. `src/card.py`).
 
@@ -237,7 +237,7 @@ These tests should be added to your `test_card.py` file:
         * `Card.all()` is a [generator](https://wiki.python.org/moin/Generators).
 
 ### Improve `create_card_image()`
-[Starting from a base of (create_card_image_0)[src/create_card_image_0.py]]
+[Starting from a base of [create_card_image_0](src/create_card_image_0.py)]
 
 This is an open ended tasks to improve the `create_card_image()` function to output better card images. You can chose to make your images as traditional or non-traditional as you want.
 
