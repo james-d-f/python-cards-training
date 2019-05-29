@@ -4,7 +4,7 @@
 * [File Structure](#File-Structure)
 * [Setup](#Setup)
 * [Session One](#Session-One)
-* [Assignment](#Reviewing-the-Assignment)
+* [Assignment](#Assignment)
 * [Reviewing the Assignment](#Reviewing-the-Assignment)
 * [Session Two](#Session-Two)
 * [Additional Reading](#Additional-Reading)
@@ -105,6 +105,7 @@ This session should cover:
 2. Functions and magic methods
     * `card_1`
 	* `__repr__()`
+    * Test with if name main
 3. Class attributes
     * `card_2`
 	* Card ranks and suits
