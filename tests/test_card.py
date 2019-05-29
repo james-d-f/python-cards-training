@@ -55,7 +55,7 @@ def king_of_diamonds():
 
 
 @pytest.fixture
-def deck():
+def hand():
     return [
         Card("5", "♥"),
         Card("7", "♠"),
@@ -70,8 +70,8 @@ def test_str(two_of_spades, five_of_hearts):
     assert str(five_of_hearts) == "5♥"
 
 
-def test_repr(deck):
-    assert repr(deck) == "[5♥, 7♠, 2♣, A♠, A♦]"
+def test_repr(hand):
+    assert repr(hand) == "[5♥, 7♠, 2♣, A♠, A♦]"
 
 
 def test_eq(two_of_spades, five_of_hearts):
@@ -88,14 +88,14 @@ def test_add(two_of_spades, king_of_diamonds):
     assert king_of_diamonds + 1 == 11
 
 
-def test_sum(deck):
-    assert sum(deck) == 16
+def test_sum(hand):
+    assert sum(hand) == 16
 
 
-def test_ordering(two_of_spades, five_of_hearts, deck):
+def test_ordering(two_of_spades, five_of_hearts, hand):
     assert two_of_spades < five_of_hearts
     assert five_of_hearts > two_of_spades
-    assert str(sorted(deck)) == "[A♦, A♠, 2♣, 5♥, 7♠]"
+    assert str(sorted(hand)) == "[A♦, A♠, 2♣, 5♥, 7♠]"
 
 
 def test_hash(two_of_spades):

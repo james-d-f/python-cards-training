@@ -199,7 +199,7 @@ These tests should be added to your `test_card.py` file:
     * Passes if a card instance can be created with the `Card.random()` method.
 * `test_init_random_multiple()`
     * Tests that `Card.random()` outputs different cards each time.
-* Fixture `deck()`
+* Fixture `hand()`
     * Add a pytest fixture which is a list of at least 5 different cards.
 * Fixtures for more cards
     * Add at least two more fixtures for individual cards.
@@ -219,12 +219,12 @@ These tests should be added to your `test_card.py` file:
         * `Card` (with non numeric rank) + `Card`
         * `Card` (with non numeric rank) + `int`
 * `test_sum()`
-    * Passes if the `sum()` of the deck fixture is correct.
+    * Passes if the `sum()` of the hand fixture is correct.
 * `test_ordering`
     * Passes if:
         * Less than operator works correctly.
         * Greater than operator works correctly.
-        * `sorted(deck)` gives a correctly sorted list of cards.
+        * `sorted(hand)` gives a correctly sorted list of cards.
 * `test_hash()` #Fail
     * Passes if cards can be hashed (`hash()`)
 * `test_frozen` #Fail

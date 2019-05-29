@@ -46,8 +46,8 @@ class Card:
 if __name__ == "__main__":
     ace_of_spades = Card("A", "♠")
     print(ace_of_spades)
-    deck = [Card.random() for _ in range(10)]
-    print(deck)
-    print(sorted(deck))
-    shuffle(deck)
-    print(deck)
+    hand = [Card.random() for _ in range(10)]
+    print(hand)
+    print(sorted(hand))
+    shuffle(hand)
+    print(hand)
