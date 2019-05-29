@@ -5,6 +5,7 @@ from random import choice
 @dataclass
 class Card:
     """A playing card. Can be added and converted to int based on rank."""
+
     RANKS = ("A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K")
     SUITS = ("♣", "♦", "♥", "♠")
     RANK_VALUES = {"A": 1, "J": 10, "Q": 10, "K": 10}
