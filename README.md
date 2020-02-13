@@ -1,13 +1,22 @@
 # Python Cards Training
 ## Contents:
-* [Project Summary](#Project-Summary)
-* [File Structure](#File-Structure)
-* [Setup](#Setup)
-* [Session One](#Session-One)
-* [Assignment](#Assignment)
-* [Reviewing the Assignment](#Reviewing-the-Assignment)
-* [Session Two](#Session-Two)
-* [Additional Reading](#Additional-Reading)
+- [Python Cards Training](#python-cards-training)
+  - [Contents:](#contents)
+  - [Project Summary](#project-summary)
+  - [File Structure](#file-structure)
+  - [Setup](#setup)
+  - [Session One](#session-one)
+  - [Assignment](#assignment)
+    - [Add features to `card.py`](#add-features-to-cardpy)
+      - [Add the `_convert_suit()` function](#add-the-convertsuit-function)
+      - [Add the `all()` function](#add-the-all-function)
+        - [Simple (Recommended):](#simple-recommended)
+        - [Advanced:](#advanced)
+    - [Add additional tests](#add-additional-tests)
+    - [Improve `create_card_image()`](#improve-createcardimage)
+  - [Reviewing the Assignment](#reviewing-the-assignment)
+  - [Session Two](#session-two)
+  - [Additional Reading](#additional-reading)
 
 ---
 ## Project Summary
@@ -83,7 +92,10 @@ Create a new folder for the project.
 In this folder:
 
 ``` shell
+mkdir Python\ Cards
+cd Python\ Cards
 pipenv install
+mkdir src
 ```
 
 ---
@@ -105,21 +117,78 @@ This session should cover:
         * All of the `## Setup` steps
 1. Classes
     * `card_0`
-    * Create a basic class for a card 
+    * Create a basic class for a card
+    ``` python
+    class Card:
+        def __init__(self, rank, suit):
+            self.rank = rank
+            self.suit = suit
+    ```
 2. Functions and magic methods
     * `card_1`
 	* `__repr__()`
+    ``` python
+    def __repr__(self):
+        return f"{self.rank} of {self.suit}"
+    ```
     * Test with if name main
+    ``` python
+    if __name__ == "__main__":
+        ace_of_spades = Card("Ace", "Spades")
+        print(ace_of_spades.rank)
+        print(ace_of_spades.suit)
+        print(ace_of_spades)
+    ```
+
 3. Class attributes
     * `card_2`
-	* Card ranks and suits
-	* Can now implement `__add__`  and `__int__` 
+	* Card ranks and suits (Share in chat)
+    ``` python
+        RANKS = ("A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K")
+        SUITS = ("♣", "♦", "♥", "♠")
+        RANK_VALUES = {"A": 1, "J": 10, "Q": 10, "K": 10}
+        SUIT_SYMBOLS = {"Club": "♣", "Diamond": "♦", "Heart": "♥", "Spade": "♠"}
+    ```
+	* Can now implement `__add__`  and `__int__`
+    ``` python
+    def __int__(self):
+        if self.rank in self.RANK_VALUES:
+            return self.RANK_VALUES[self.rank]
+        else:
+            return int(self.rank)
+    ```
+    ``` python
+    def __add__(self, other):
+        return int(self) + int(other)
+    ```
+    ``` python
+    def __radd__(self, other):
+        return self.__add__(other)
+    ```
+
 4. Importing
     * `card_2`
-	* `from random import choice`
+    * Want to make random cards
+	* Import random
+    ``` python
+    from random import choice
+    ```
 5. Class methods
     * `card_2`
 	* `random()`
+    * Add random class method
+    ``` python
+    @classmethod
+    def random(cls):
+        return cls(choice(cls.RANKS), choice(cls.SUITS))
+    ```
+
+    ``` python
+    if __name__ == "__main__":
+        ace_of_spades = Card("A", "♠")
+        print(ace_of_spades)
+        print(Card.random())
+    ```
 6. Formatting and Linting
     * Explain and demonstrate:
         * [PEP8](https://www.python.org/dev/peps/pep-0008/)
@@ -128,25 +197,105 @@ This session should cover:
 7. Docstrings
     * `card_3`
     * Add examples of docstrings. Show VS Code reading them.
+    ``` python
+    """A playing card. Can be added and converted to int based on rank."""
+    ```
+
+    ``` python
+    """Return a random playing card from available ranks and suits."""
+    ```
 8. Dataclasses
     * `card_4`
     * Demonstrate missing methods like `__eq__`
-	* Ordering 
+    * Change to data class
+
+    ``` python
+    from dataclasses import dataclass
+    from random import choice
+
+    @dataclass
+    ```
+
+    ``` python
+    rank: str
+    suit: str
+    ```
+
+	* Ordering
+        * `card_5`
+        ``` python
+        sort_index: int = field(init=False, repr=False)  # This must come first for sorting.
+        ```
         * Explain `__post_init__`
+        ``` python
+        def __post_init__(self):
+            self._add_sort_index_field()
+        ```
         * Show private method with underscore
+        ``` python
+        def _add_sort_index_field(self):
+            """Add field `sort_index` for card order."""
+            rank_i = self.RANKS.index(self.rank)
+            suit_i = self.SUITS.index(self.suit)
+            self.sort_index = rank_i * len(self.SUITS) + suit_i
+        ```
+
+        ``` python
+        if __name__ == "__main__":
+        ace_of_spades = Card("A", "♠")
+            print(ace_of_spades)
+            hand = [Card.random() for _ in range(10)]
+            print(hand)
+            print(sorted(hand))
+            shuffle(hand)
+            print(hand)
+        ```
+
 9. Exceptions
     * `card_6`
+    ``` python
+    def _add_sort_index_field(self):
+        """Add field `sort_index` for card order and verifies valid rank and suit."""
+        try:
+            rank_i = self.RANKS.index(self.rank)
+        except ValueError:
+            print(f"Card rank ({self.rank}) not in {self.RANKS}\n")
+            raise
+        try:
+            suit_i = self.SUITS.index(self.suit)
+        except ValueError:
+            print(f"Card suit ({self.suit}) not in {self.SUITS}")
+            raise
+        self.sort_index = rank_i * len(self.SUITS) + suit_i
+    ```
+
+    ``` python
+    print(Card("17", "♥"))  # Expect this to fail but with useful error
+    ```
 10. Packages
     * Explain:
         * `pipenv` packages and dev packages
     * Run:
-        * `pipenv install pillow`
-        * `pipenv install --dev pytest`
+    ``` shell
+        pipenv install pillow
+        pipenv install --dev pytest
+    ```
 11. Testing (Continued in assignment)
     * `test_card_0`
     * Create:
         * `tests` folder
         * `test_card.py` file
+
+    ``` python
+    from src.card import Card
+    ```
+
+    ``` python
+    def test_repr():
+        ace_of_spades = Card("A", "♠")
+        assert repr(ace_of_spades) == "A♠"
+    ```
+
     * Explain:
         * `assert`
         * pytest
@@ -156,13 +305,72 @@ This session should cover:
     * Explain:
         * `isinstance`
     * `test_card_2`
+
+    ``` python
+    def test_init_symbol():
+        card = Card("2", "♠")
+        assert isinstance(card, Card)
+    ```
+
     * Explain:
         * Fixtures
     * `test_card_3`
+
+    ``` python
+    import pytest
+    ```
+
+    ``` python
+    @pytest.fixture
+    def two_of_spades():
+        return Card("2", "♠")
+
+
+    def test_repr(two_of_spades):
+        assert repr(two_of_spades) == "2♠"
+    ```
+
     * Explain:
         * `pytest.raises()`
+
+        ``` python
+        def test_validation():
+        with pytest.raises(ValueError):
+            Card("52", "♣")
+        with pytest.raises(ValueError):
+            Card("2", "B")
+        ```
+
 12. Create image (Continued in assignment)
     * `create_card_image_0`
+
+    ``` python
+    from PIL import Image, ImageDraw, ImageFont
+
+    from card import Card
+
+
+    def create_card_image(card):
+        image_width = 600
+        image_height = 900
+        light_grey = (240, 240, 240)
+        dark_grey = (30, 30, 20)
+        dark_red = (220, 30, 20)
+        suit_colour = dark_grey if card.suit in "♣♠" else dark_red
+        font = ImageFont.truetype("Apple Symbols.ttf", size=120)
+
+        card_image = Image.new("RGB", (image_width, image_height), color=light_grey)
+        draw = ImageDraw.Draw(card_image)
+        draw.text((60, 60), f"{card.rank}{card.suit}", fill=suit_colour, font=font)
+
+        return card_image
+
+
+    if __name__ == "__main__":
+        image = create_card_image(Card.random())
+        image.show()
+
+    ```
 
 ---
 ## Assignment
@@ -216,7 +424,7 @@ These tests should be added to your `test_card.py` file:
     * Passes if:
         * A card is equal (`==`) to itself.
         * A card is equal to another instance of the same card (same rank and suit).
-        * A card is not equal (`!=`) to a different card. 
+        * A card is not equal (`!=`) to a different card.
 * `test_add()`
     * Passes if all of these give a correct result:
         * `Card` + `Card`
@@ -298,7 +506,7 @@ Assignment followup:
 	* Add `mypy.ini`
     * Explain:
         * Types
-        * MyPy 
+        * MyPy
 16. Frozen dataclass
     * `card_8`
     * Explain:
