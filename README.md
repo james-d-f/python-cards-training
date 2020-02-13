@@ -88,6 +88,9 @@ pipenv install
 
 ---
 ## Session One
+
+Introduce project. We want to make Python objects that represent playing cards so we can use them in a game.
+
 This session should cover:
 
 0. Setup
