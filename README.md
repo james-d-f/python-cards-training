@@ -94,6 +94,7 @@ This session should cover:
     * Explain:
         * Project structure
         * `pip` and `pipenv`
+	* Use [the training slides](https://docs.google.com/presentation/d/1lPxt7WF5IMX6muThL46N9cJc_ZleAgIGy9pu0mBVsuA/edit#slide=id.g57842176df_0_0) up to slide 6.
     * Create:
         * Folder for project
         * `src` folder
