@@ -370,8 +370,12 @@ def test_repr():
 - Explain:
   - `assert`
   - pytest
-- Run:
-  - `pipenv run python -m pytest` in project directory
+- Run in project directory:
+
+  ```shell
+  pipenv run python -m pytest
+  ```
+
 - `test_card_1`
 - Explain:
   - `isinstance`
